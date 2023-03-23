@@ -1,7 +1,7 @@
 export const buildQuery = (params, initialQuery) => {
   const searchParams = new URLSearchParams(initialQuery);
 
-  for (const key of params) {
+  for (const key in params) {
     const value = params[key];
 
     if (value === undefined) {
