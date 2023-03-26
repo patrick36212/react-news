@@ -3,10 +3,12 @@ import NewsList from "../../components/NewsList";
 import { useQuery } from "react-query";
 import { getCountryNews } from "./getCountryNews";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { selectCountryCode } from "./newsSlice";
 
 const News = () => {
   const [articles, setArticles] = useState([]);
-  const countryCode = "pl";
+  const countryCode = useSelector(selectCountryCode);
 
   const { data } = useQuery(["countryNews", countryCode], () => {
     if (!!countryCode) {
