@@ -5,5 +5,6 @@ export const getCountryNews = (countryCode) =>
     path: "/top-headlines",
     params: {
       country: countryCode,
+      pageSize: 100,
     },
   });
