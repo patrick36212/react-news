@@ -6,18 +6,17 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Inter', sans-serif;
     word-wrap: anywhere;
-    min-height: 100vh;
     box-sizing: border-box;
-    color: #f5f5f5;
-    background: #252525;
-    overflow: scroll;
+    color: #252525;
+    background: #d5d5d5;
+    overflow: hidden;
   }
 
   *, ::after, ::before {
     box-sizing: inherit;
   }
-
+  
   #app {
-    padding: 20px;
+    display: flex;
   }
 `;
