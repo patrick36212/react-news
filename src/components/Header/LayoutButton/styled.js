@@ -6,16 +6,16 @@ export const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+  margin: 0 20px;
 `;
 
 export const Button = styled.button`
   cursor: pointer;
   background: transparent;
   padding: 6px;
-  border-radius: 12px;
   min-width: 50px;
-  border: 1px solid transparent;
-  color: #f5f5f5;
+  border: 2px solid transparent;
+  color: #252525;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -23,22 +23,22 @@ export const Button = styled.button`
   gap: 6px;
 
   &:hover {
-    border: 1px solid #f5f5f5;
+    border-bottom: 2px solid #252525;
   }
 
   ${({ active }) =>
     active &&
     css`
-      border: 1px solid #f5f5f5;
+      border-bottom: 2px solid #252525;
     `}
 `;
 
 export const ListIcon = styled(List)`
-  stroke: #f5f5f5;
+  stroke: #252525;
 `;
 
 export const TilesIcon = styled(Tiles)`
-  stroke: #f5f5f5;
+  stroke: #252525;
 `;
 
 export const ButtonInfo = styled.span`
