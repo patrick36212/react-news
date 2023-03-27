@@ -2,13 +2,14 @@ import Main from "../../components/Main";
 import NewsList from "../../components/NewsList";
 import { useQuery } from "react-query";
 import { getCountryNews } from "./getCountryNews";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { selectCountryCode } from "./newsSlice";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectArticles, selectCountryCode, setArticles } from "./newsSlice";
 
 const News = () => {
-  const [articles, setArticles] = useState([]);
+  const dispatch = useDispatch();
   const countryCode = useSelector(selectCountryCode);
+  const articles = useSelector(selectArticles);
 
   const { data } = useQuery(["countryNews", countryCode], () => {
     if (!!countryCode) {
@@ -18,11 +19,16 @@ const News = () => {
 
   useEffect(() => {
     if (!!data) {
-      setArticles(data.articles);
+      dispatch(setArticles(data.articles));
     }
-  }, [data]);
+  }, [data, dispatch]);
 
-  return <Main>{!!data && <NewsList data={articles} />}</Main>;
+  return (
+    <Main>
+      {articles.length === 0 && <p>Chose country for articles</p>}
+      {!!data && <NewsList data={articles} />}
+    </Main>
+  );
 };
 
 export default News;
