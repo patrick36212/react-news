@@ -1,12 +1,29 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const MenuWrapper = styled.div`
+export const MenuWrapper = styled.aside`
   max-height: 100vh;
   min-width: 300px;
-  background: #0b4dda;
+  background: ${({ theme }) => theme.colors.sideBackground};
   display: flex;
   justify-content: center;
-  padding: 96px 0;
+  padding: 90px 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    min-width: 220px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    min-width: 100%;
+    transition: 0.3s ease-in-out;
+    transform: translateX(-100%);
+    z-index: 1;
+
+    ${({ active }) =>
+      active &&
+      css`
+        transform: translateX(0);
+      `}
+  }
 `;
 export const MenuList = styled.ul`
   list-style-type: none;
@@ -24,14 +41,15 @@ export const MenuList = styled.ul`
 export const MenuButton = styled.button`
   background: none;
   border: none;
-  border-bottom: 1px solid #f5f5f5;
-  color: #f5f5f5;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.mainColor};
+  color: ${({ theme }) => theme.colors.mainColor};
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  padding: 10px;
 
   &:hover {
-    background: #f5f5f5;
-    color: #252525;
+    background: ${({ theme }) => theme.colors.mainColor};
+    color: ${({ theme }) => theme.colors.secondaryColor};
     transform: scale(1.04);
   }
 `;
@@ -49,9 +67,40 @@ export const CountryFlag = styled.div`
   background-image: ${({ src }) => `url(${src})`};
   background-size: contain;
   background-repeat: no-repeat;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 export const CountryName = styled.p`
   font-weight: 600;
   font-size: 16px;
+  margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    font-size: 14px;
+  }
+`;
+
+export const OpenSideMenu = styled.button`
+  display: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    border: none;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: ${({ theme }) => theme.colors.mainColor};
+    cursor: pointer;
+    top: 50%;
+    border-radius: 0 12px 12px 0;
+    width: 30px;
+    height: 30px;
+    background: ${({ theme }) => theme.colors.sideBackground};
+    z-index: 1;
+  }
 `;

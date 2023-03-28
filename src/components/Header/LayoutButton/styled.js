@@ -7,6 +7,10 @@ export const ButtonWrapper = styled.div`
   align-items: center;
   gap: 10px;
   margin: 0 20px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    margin: 0;
+  }
 `;
 
 export const Button = styled.button`
@@ -15,7 +19,7 @@ export const Button = styled.button`
   padding: 6px;
   min-width: 50px;
   border: 2px solid transparent;
-  color: #252525;
+  color: ${({ theme }) => theme.colors.mainColor};
   display: grid;
   justify-items: center;
   align-items: center;
@@ -23,24 +27,40 @@ export const Button = styled.button`
   gap: 6px;
 
   &:hover {
-    border-bottom: 2px solid #252525;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.mainColor};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    min-width: 30px;
   }
 
   ${({ active }) =>
     active &&
     css`
-      border-bottom: 2px solid #252525;
+      border-bottom: 2px solid ${({ theme }) => theme.colors.mainColor};
     `}
 `;
 
 export const ListIcon = styled(List)`
-  stroke: #252525;
+  stroke: ${({ theme }) => theme.colors.mainColor};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    width: 16px;
+  }
 `;
 
 export const TilesIcon = styled(Tiles)`
-  stroke: #252525;
+  stroke: ${({ theme }) => theme.colors.mainColor};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    width: 16px;
+  }
 `;
 
 export const ButtonInfo = styled.span`
   font-size: 12px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    font-size: 10px;
+  }
 `;

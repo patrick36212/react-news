@@ -7,8 +7,20 @@ const Main = styled.main`
   justify-content: center;
   margin: 96px 0;
   padding: 20px 0;
-  background: #f5f5f5;
-  box-shadow: inset 4px 3px 3px rgba(61, 60, 60, 0.35);
+  background: ${({ theme }) => theme.colors.secondaryBackground};
+  box-shadow: inset 0 3px 3px rgba(61, 60, 60, 0.35);
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    margin: 96px 0 47px;
+    max-height: calc(100vh - 142px);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    padding: 10px 0;
+  }
 `;
 
 export default Main;
