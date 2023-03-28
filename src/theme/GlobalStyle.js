@@ -7,8 +7,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Inter', sans-serif;
     word-wrap: anywhere;
     box-sizing: border-box;
-    color: #252525;
-    background: #d5d5d5;
+    color: ${({ theme }) => theme.colors.secondaryColor};
+    background: ${({ theme }) => theme.colors.mainBackground};
     overflow: hidden;
   }
 
