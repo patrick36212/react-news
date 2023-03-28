@@ -9,28 +9,39 @@ import {
   MenuItem,
   MenuList,
   MenuWrapper,
+  OpenSideMenu,
 } from "./styled";
+import { useState } from "react";
 
 const SideMenu = () => {
   const countriesList = countries;
   const dispatch = useDispatch();
 
+  const [isVisible, setVisible] = useState(false);
+
+  const handleOnClick = (country) => {
+    dispatch(setCountryCode(country.code));
+    setVisible(false);
+  };
+
   return (
-    <MenuWrapper>
-      <MenuList>
-        {countriesList.map((country) => (
-          <MenuButton
-            key={nanoid()}
-            onClick={() => dispatch(setCountryCode(country.code))}
-          >
-            <MenuItem>
-              <CountryFlag src={country.flag} />{" "}
-              <CountryName>{country.name}</CountryName>
-            </MenuItem>
-          </MenuButton>
-        ))}
-      </MenuList>
-    </MenuWrapper>
+    <>
+      <MenuWrapper active={isVisible}>
+        <MenuList>
+          {countriesList.map((country) => (
+            <MenuButton key={nanoid()} onClick={() => handleOnClick(country)}>
+              <MenuItem>
+                <CountryFlag src={country.flag} />{" "}
+                <CountryName>{country.name}</CountryName>
+              </MenuItem>
+            </MenuButton>
+          ))}
+        </MenuList>
+      </MenuWrapper>
+      <OpenSideMenu onClick={() => setVisible(!isVisible)}>
+        {isVisible ? "<" : ">"}
+      </OpenSideMenu>
+    </>
   );
 };
 
