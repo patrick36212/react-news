@@ -4,24 +4,37 @@ import {
   NewsTileInfo,
   NewsTileList,
   NewsTileTitle,
+  TileButton,
   TileWrapper,
 } from "./styled";
 import { nanoid } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
+import { selectIsListActive } from "../Header/LayoutButton/layoutSlice";
 
 const NewsList = ({ data }) => {
+  const isListActive = useSelector(selectIsListActive);
+
   return (
-    <NewsTileList>
+    <NewsTileList list={isListActive}>
       {data.map((news) => (
-        <TileWrapper key={nanoid()}>
-          <Image />
-          <NewsTileTitle>{news.title}</NewsTileTitle>
-          <InfoWrapper>
-            <NewsTileInfo>{news.source.name}</NewsTileInfo>
-            <NewsTileInfo>
-              {news.publishedAt.replace("T", " ").split("Z")}
-            </NewsTileInfo>
-          </InfoWrapper>
-        </TileWrapper>
+        <TileButton key={nanoid()}>
+          <TileWrapper list={isListActive}>
+            <Image
+              image={news.urlToImage}
+              noImage={!news.urlToImage}
+              list={isListActive}
+            />
+            <NewsTileTitle title={news.title} list={isListActive}>
+              {news.title}
+            </NewsTileTitle>
+            <InfoWrapper list={isListActive}>
+              <NewsTileInfo>Source: {news.source.name}</NewsTileInfo>
+              <NewsTileInfo>
+                Published at: {news.publishedAt.replace("T", " ").split("Z")}
+              </NewsTileInfo>
+            </InfoWrapper>
+          </TileWrapper>
+        </TileButton>
       ))}
     </NewsTileList>
   );
