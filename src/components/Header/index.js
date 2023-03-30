@@ -1,9 +1,11 @@
-import { HeaderTitle, HeaderWrapper } from "./styled";
+import { HeaderLink, HeaderTitle, HeaderWrapper } from "./styled";
 import LayoutButton from "./LayoutButton";
 
 const Header = () => (
   <HeaderWrapper>
-    <HeaderTitle>gnNews</HeaderTitle>
+    <HeaderLink to={"/"}>
+      <HeaderTitle>gnNews</HeaderTitle>
+    </HeaderLink>
     <LayoutButton />
   </HeaderWrapper>
 );
