@@ -1,16 +1,22 @@
 import styled, { css } from "styled-components";
 import { ReactComponent as List } from "./List.svg";
 import { ReactComponent as Tiles } from "./Tiles.svg";
+import { ReactComponent as Popup } from "./Popup.svg";
 
 export const ButtonWrapper = styled.div`
-  display: flex;
+  display: inherit;
   align-items: center;
   gap: 10px;
-  margin: 0 20px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     margin: 0;
   }
+`;
+
+export const AdditionalButtonWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+  margin: 0 20px;
 `;
 
 export const Button = styled.button`
@@ -50,6 +56,14 @@ export const ListIcon = styled(List)`
 `;
 
 export const TilesIcon = styled(Tiles)`
+  stroke: ${({ theme }) => theme.colors.mainColor};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    width: 16px;
+  }
+`;
+
+export const PopupIcon = styled(Popup)`
   stroke: ${({ theme }) => theme.colors.mainColor};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
