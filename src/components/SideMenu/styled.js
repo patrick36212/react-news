@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const MenuWrapper = styled.aside`
   max-height: 100vh;
@@ -38,7 +39,8 @@ export const MenuList = styled.ul`
     display: none;
   }
 `;
-export const MenuButton = styled.button`
+export const MenuButton = styled(NavLink)`
+  text-decoration: none;
   background: none;
   border: none;
   border-bottom: 1px solid ${({ theme }) => theme.colors.mainColor};
@@ -51,6 +53,11 @@ export const MenuButton = styled.button`
     background: ${({ theme }) => theme.colors.mainColor};
     color: ${({ theme }) => theme.colors.secondaryColor};
     transform: scale(1.04);
+  }
+
+  &.active {
+    background: ${({ theme }) => theme.colors.mainColor};
+    color: ${({ theme }) => theme.colors.secondaryColor};
   }
 `;
 
