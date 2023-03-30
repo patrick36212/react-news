@@ -23,12 +23,12 @@ export const NewsPopupWrapper = styled.div`
 export const NewsPopup = styled.dialog`
   max-width: 60%;
   display: grid;
+  border: 5px solid ${({ theme }) => theme.colors.secondaryBackground};
   grid-auto-rows: max-content;
   justify-items: center;
   align-content: center;
   grid-gap: 10px;
-  border: none;
-  background: ${({ theme }) => theme.colors.secondaryBackground};
+  background: ${({ theme }) => theme.colors.mainColor};
   overflow-y: auto;
   animation: 0.3s ${popupAnim} ease-out;
 
