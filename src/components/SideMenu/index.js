@@ -29,7 +29,11 @@ const SideMenu = () => {
       <MenuWrapper active={isVisible}>
         <MenuList>
           {countriesList.map((country) => (
-            <MenuButton key={nanoid()} onClick={() => handleOnClick(country)}>
+            <MenuButton
+              to={`/country/${country.name}`}
+              key={nanoid()}
+              onClick={() => handleOnClick(country)}
+            >
               <MenuItem>
                 <CountryFlag src={country.flag} />{" "}
                 <CountryName>{country.name}</CountryName>
