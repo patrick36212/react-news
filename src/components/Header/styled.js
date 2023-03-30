@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const HeaderWrapper = styled.header`
   position: absolute;
@@ -20,12 +21,16 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const HeaderTitle = styled.h1`
-  justify-self: center;
   color: ${({ theme }) => theme.colors.mainColor};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 24px;
   }
+`;
+
+export const HeaderLink = styled(Link)`
+  text-decoration: none;
+  justify-self: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     justify-self: left;
