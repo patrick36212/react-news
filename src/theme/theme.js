@@ -13,5 +13,6 @@ export const theme = {
     sideBackground: "#0b4dda",
     mainBackground: "#000000",
     secondaryBackground: "#d5d5d5",
+    backdropBackground: "#0B4DDA56",
   },
 };
