@@ -7,17 +7,21 @@ import {
   TileButton,
   TileWrapper,
 } from "./styled";
-import { nanoid } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectIsListActive } from "../Header/LayoutButton/layoutSlice";
+import { setSelectedArticle } from "../../features/News/newsSlice";
 
 const NewsList = ({ data }) => {
   const isListActive = useSelector(selectIsListActive);
+  const dispatch = useDispatch();
 
   return (
     <NewsTileList list={isListActive}>
       {data.map((news) => (
-        <TileButton key={nanoid()}>
+        <TileButton
+          onClick={() => dispatch(setSelectedArticle(news.id))}
+          key={news.id}
+        >
           <TileWrapper list={isListActive}>
             <Image
               image={news.urlToImage}
