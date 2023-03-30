@@ -9,6 +9,7 @@ import store from "./core/store";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
+      cacheTime: 0,
       retry: 1,
     },
   },
