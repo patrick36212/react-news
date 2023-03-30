@@ -1,0 +1,5 @@
+{
+  "short_name": "gnNews",
+  "start_url": ".",
+  "display": "standalone"
+}
