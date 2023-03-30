@@ -4,12 +4,21 @@ import { useQuery } from "react-query";
 import { getCountryNews } from "./getCountryNews";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectArticles, selectCountryCode, setArticles } from "./newsSlice";
+import {
+  closeSelectedArticle,
+  selectArticles,
+  selectCountryCode,
+  selectSelectedArticle,
+  setArticles,
+} from "./newsSlice";
+import Popup from "../../components/Popup";
+import { nanoid } from "@reduxjs/toolkit";
 
 const News = () => {
   const dispatch = useDispatch();
   const countryCode = useSelector(selectCountryCode);
   const articles = useSelector(selectArticles);
+  const selectedArticle = useSelector(selectSelectedArticle);
 
   const { data } = useQuery(["countryNews", countryCode], () => {
     if (!!countryCode) {
@@ -19,7 +28,9 @@ const News = () => {
 
   useEffect(() => {
     if (!!data) {
-      dispatch(setArticles(data.articles));
+      const articleList = data.articles;
+      articleList.forEach((article) => (article.id = nanoid()));
+      dispatch(setArticles(articleList));
     }
   }, [data, dispatch]);
 
@@ -27,6 +38,12 @@ const News = () => {
     <Main>
       {articles.length === 0 && <p>Chose country for articles</p>}
       {!!data && <NewsList data={articles} />}
+      {!!selectedArticle && (
+        <Popup
+          news={selectedArticle}
+          handleClose={() => dispatch(closeSelectedArticle())}
+        />
+      )}
     </Main>
   );
 };
