@@ -22,7 +22,7 @@ const Popup = ({ news, handleClose }) => {
             {news.content ? "read more" : "click"}
           </a>
         </PopupContent>
-        <PopupAddInfo>Author: {news.author}</PopupAddInfo>
+        {!!news.author && <PopupAddInfo>Author: {news.author}</PopupAddInfo>}
         <PopupCloseButton onClick={handleClose}>Close</PopupCloseButton>
       </NewsPopup>
     </NewsPopupWrapper>
