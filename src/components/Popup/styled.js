@@ -1,12 +1,20 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
+const popupAnim = keyframes`
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+`;
 export const NewsPopupWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: ${({ theme }) => theme.colors.mainBackground}03;
+  background: ${({ theme }) => theme.colors.backdropBackground};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,6 +30,7 @@ export const NewsPopup = styled.dialog`
   border: none;
   background: ${({ theme }) => theme.colors.secondaryBackground};
   overflow-y: auto;
+  animation: 0.3s ${popupAnim} ease-out;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     max-width: 80%;
