@@ -3,6 +3,8 @@ import { NEWS_API_KEY } from "./NEWS_API_KEY";
 
 const API_URL = "https://newsapi.org/v2";
 const API_KEY = NEWS_API_KEY;
+
+const timeout = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 export const fetchFromAPI = async ({ path, params }) => {
   const defaultParams = {
     apiKey: API_KEY,
@@ -12,6 +14,8 @@ export const fetchFromAPI = async ({ path, params }) => {
     ...defaultParams,
     ...(params || {}),
   };
+
+  await timeout(1000);
 
   const response = await fetch(`${API_URL}${path}?${buildQuery(allParams)}`);
 
