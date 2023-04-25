@@ -1,13 +1,14 @@
 import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 
-export const MenuWrapper = styled.aside`
-  max-height: 100vh;
-  min-width: 300px;
+export const ListWrapper = styled.aside`
+  min-width: max-content;
+  max-height: 100%;
+  padding: 18px;
+  max-width: max-content;
   background: ${({ theme }) => theme.colors.sideBackground};
   display: flex;
   justify-content: center;
-  padding: 90px 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     min-width: 220px;
@@ -26,12 +27,12 @@ export const MenuWrapper = styled.aside`
       `}
   }
 `;
-export const MenuList = styled.ul`
+export const List = styled.ul`
   list-style-type: none;
   padding: 0;
+  margin: 0;
   display: grid;
   grid-gap: 10px;
-  max-width: max-content;
   scrollbar-width: none;
   overflow-y: scroll;
 
@@ -39,11 +40,12 @@ export const MenuList = styled.ul`
     display: none;
   }
 `;
-export const MenuButton = styled(NavLink)`
+export const ListButton = styled(NavLink)`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
   text-decoration: none;
-  background: none;
-  border: none;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.mainColor};
   color: ${({ theme }) => theme.colors.mainColor};
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -61,13 +63,6 @@ export const MenuButton = styled(NavLink)`
   }
 `;
 
-export const MenuItem = styled.li`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-`;
-
 export const CountryFlag = styled.div`
   width: 20px;
   height: 20px;
@@ -82,7 +77,6 @@ export const CountryFlag = styled.div`
 `;
 
 export const CountryName = styled.p`
-  font-weight: 600;
   font-size: 16px;
   margin: 0;
 
@@ -91,7 +85,7 @@ export const CountryName = styled.p`
   }
 `;
 
-export const OpenSideMenu = styled.button`
+export const OpenCountryList = styled.button`
   display: none;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
