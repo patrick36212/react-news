@@ -1,18 +1,13 @@
 import { HeaderLink, HeaderTitle, HeaderWrapper } from "./styled";
 import LayoutButton from "./LayoutButton";
-import { useState } from "react";
-import HeaderPopup from "./HeaderPopup";
 
 const Header = () => {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
   return (
     <HeaderWrapper>
       <HeaderLink to={"/"}>
-        <HeaderTitle>gnNews</HeaderTitle>
+        <HeaderTitle>React News</HeaderTitle>
       </HeaderLink>
-      <LayoutButton setIsPopupOpen={setIsPopupOpen} />
-      {isPopupOpen && <HeaderPopup setIsPopupOpen={setIsPopupOpen} />}
+      <LayoutButton />
     </HeaderWrapper>
   );
 };
