@@ -1,6 +1,6 @@
-import { fetchFromAPI } from "../../../core/fetchFromAPI";
+import { fetchFromAPI } from "../core/fetchFromAPI";
 
-export const getCountryNews = (countryCode) =>
+export const getNewsData = (countryCode) =>
   fetchFromAPI({
     path: "/top-headlines",
     params: {

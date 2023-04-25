@@ -4,18 +4,18 @@ import {
   Navigate,
   Route,
 } from "react-router-dom";
-import News from "../features/News";
-import CountryNews from "../features/News/CountryNews";
+import GeoCountryNews from "../features/GeoCountryNews";
+import ChosenCountryNews from "../features/ChosenCountryNews";
 
-export const initialPath = "/country";
-export const countryPath = "/country/:name";
+export const geoCountryNews = "/news";
+export const countryPath = "/country/news/:name";
 
 export const routes = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path={initialPath} element={<News />} />
-      <Route path={countryPath} element={<CountryNews />} />
-      <Route path={"/"} element={<Navigate to={initialPath} />} />
+      <Route path={geoCountryNews} element={<GeoCountryNews />} />
+      <Route path={countryPath} element={<ChosenCountryNews />} />
+      <Route path={"/"} element={<Navigate to={geoCountryNews} />} />
     </>
   )
 );
