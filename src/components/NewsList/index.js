@@ -9,7 +9,7 @@ import {
 } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsListActive } from "../Header/LayoutButton/layoutSlice";
-import { setSelectedArticle } from "../../features/News/newsSlice";
+import { setSelectedArticle } from "../../features/newsSlice";
 
 const NewsList = ({ data }) => {
   const isListActive = useSelector(selectIsListActive);
