@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import CountryList from "../components/CountryList";
 import Main from "../components/Main";
 import Section from "../components/Section";
+import Footer from "../components/Footer";
 
 const News = ({ children }) => {
   return (
@@ -11,6 +12,7 @@ const News = ({ children }) => {
         <CountryList />
         <Section>{children}</Section>
       </Main>
+      <Footer/>
     </>
   );
 };
