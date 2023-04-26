@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 
 export const ListWrapper = styled.aside`
   min-width: max-content;
-  max-height: 100%;
-  padding: 18px;
   max-width: max-content;
+  max-height: calc(100vh - 182px);
+  padding: 18px;
   background: ${({ theme }) => theme.colors.sideBackground};
   display: flex;
   justify-content: center;

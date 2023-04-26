@@ -2,14 +2,14 @@ import styled, { css } from "styled-components";
 import noImg from "./noImg.png";
 
 export const NewsTileList = styled.ul`
-  padding: 0 15px;
+  padding: 15px;
   list-style-type: none;
   overflow-y: scroll;
-  max-height: 100%;
+  max-height: 80vh;
   width: 100%;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: 10px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
@@ -21,7 +21,7 @@ export const NewsTileList = styled.ul`
   ${({ list }) =>
     list &&
     css`
-      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
 
       @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         grid-template-columns: 1fr;
