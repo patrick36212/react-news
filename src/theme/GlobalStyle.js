@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     word-wrap: anywhere;
     box-sizing: border-box;
     color: ${({ theme }) => theme.colors.secondaryColor};
-    overflow: auto;
+    max-height: 100vh;
   }
 
   *, ::after, ::before {
