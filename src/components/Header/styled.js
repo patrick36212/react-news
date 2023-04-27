@@ -8,7 +8,6 @@ export const HeaderWrapper = styled.header`
   align-items: center;
   padding: 20px;
   background: ${({ theme }) => theme.colors.mainBackground};
-  grid-area: header;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding: 10px;
