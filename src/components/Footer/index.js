@@ -1,6 +1,6 @@
 import { FooterInfo, FooterWrapper } from "./syled";
 import { useSelector } from "react-redux";
-import { selectArticles } from "../../features/News/newsSlice";
+import { selectArticles } from "../../features/newsSlice";
 import { useEffect, useState } from "react";
 
 const Footer = () => {
