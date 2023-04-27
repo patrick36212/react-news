@@ -8,7 +8,7 @@ import GeoCountryNews from "../features/GeoCountryNews";
 import ChosenCountryNews from "../features/ChosenCountryNews";
 
 export const geoCountryNews = "/news";
-export const countryPath = "/country/news/:name";
+export const countryPath = "/news/country/:name";
 
 export const routes = createBrowserRouter(
   createRoutesFromElements(
