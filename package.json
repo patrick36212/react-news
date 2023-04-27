@@ -1,8 +1,8 @@
 {
   "name": "gn-news",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": true,
-  "homepage": "https://patrick36212.github.io/react-news/news",
+  "homepage": "https://patrick36212.github.io/react-news",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.16.5",
@@ -26,7 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build",
-    "predeploy": "npm run build"
+    "predeploy": "npm run deploy"
   },
   "eslintConfig": {
     "extends": [
