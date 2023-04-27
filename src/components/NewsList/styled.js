@@ -1,11 +1,11 @@
 import styled, { css } from "styled-components";
-import noImg from "./noImg.png";
+import Img from "./img.svg";
 
 export const NewsTileList = styled.ul`
   padding: 15px;
   list-style-type: none;
   overflow-y: scroll;
-  max-height: 80vh;
+  max-height: 100%;
   width: 100%;
   margin: 0;
   display: grid;
@@ -14,16 +14,16 @@ export const NewsTileList = styled.ul`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-    padding: 0 10px;
+    padding: 10px;
     grid-gap: 6px;
   }
 
   ${({ list }) =>
     list &&
     css`
-      grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 
-      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+      @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         grid-template-columns: 1fr;
       }
     `}
@@ -86,7 +86,9 @@ export const Image = styled.img`
   ${({ noImage }) =>
     noImage &&
     css`
-      background-image: url(${noImg});
+      background-image: url(${Img});
+      background-size: contain;
+      background-color: ${({ theme }) => theme.colors.additionalColor};;
     `}
 `;
 
