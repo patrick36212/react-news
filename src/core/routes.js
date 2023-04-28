@@ -1,5 +1,5 @@
 import {
-  createBrowserRouter,
+  createHashRouter,
   createRoutesFromElements,
   Navigate,
   Route,
@@ -10,7 +10,7 @@ import ChosenCountryNews from "../features/ChosenCountryNews";
 export const geoCountryNews = "/news";
 export const countryPath = "/news/country/:name";
 
-export const routes = createBrowserRouter(
+export const routes = createHashRouter(
   createRoutesFromElements(
     <>
       <Route path={geoCountryNews} element={<GeoCountryNews />} />
