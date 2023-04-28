@@ -24,7 +24,7 @@ const CountryList = () => {
         <List>
           {countriesList.map((country) => (
             <ListButton
-              to={`/country/news/${country.name}`}
+              to={`/news/country/${country.name}`}
               key={nanoid()}
               onClick={() => handleOnClick(country)}
             >
