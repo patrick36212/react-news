@@ -15,7 +15,7 @@ export const routes = createBrowserRouter(
     <>
       <Route path={geoCountryNews} element={<GeoCountryNews />} />
       <Route path={countryPath} element={<ChosenCountryNews />} />
-      <Route path={"/"} element={<Navigate to={geoCountryNews} />} />
+      <Route path="/" element={<Navigate to={geoCountryNews} />} />
     </>
   )
 );
