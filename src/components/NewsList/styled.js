@@ -4,12 +4,12 @@ import Img from "./img.svg";
 export const NewsTileList = styled.ul`
   padding: 15px;
   list-style-type: none;
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 100%;
   width: 100%;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
   grid-gap: 10px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
@@ -21,7 +21,7 @@ export const NewsTileList = styled.ul`
   ${({ list }) =>
     list &&
     css`
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
 
       @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         grid-template-columns: 1fr;
