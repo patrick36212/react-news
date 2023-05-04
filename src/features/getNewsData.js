@@ -2,9 +2,8 @@ import { fetchFromAPI } from "../core/fetchFromAPI";
 
 export const getNewsData = (countryCode) =>
   fetchFromAPI({
-    path: "/top-headlines",
+    path: "/news",
     params: {
       country: countryCode,
-      pageSize: 100,
     },
   });
