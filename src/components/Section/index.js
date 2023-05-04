@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Section = styled.section`
   display: inherit;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0 0 0 60px;
