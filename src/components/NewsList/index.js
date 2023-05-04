@@ -24,17 +24,17 @@ const NewsList = ({ data }) => {
         >
           <TileWrapper list={isListActive}>
             <Image
-              image={news.urlToImage}
-              noImage={!news.urlToImage}
+              image={news.image_url}
+              noImage={!news.image_url}
               list={isListActive}
             />
             <NewsTileTitle title={news.title} list={isListActive}>
               {news.title}
             </NewsTileTitle>
             <InfoWrapper list={isListActive}>
-              <NewsTileInfo>Source: {news.source.name}</NewsTileInfo>
+              <NewsTileInfo>Source: {news.source_id}</NewsTileInfo>
               <NewsTileInfo>
-                Published at: {news.publishedAt.replace("T", " ").split("Z")}
+                Published at: {news.pubDate}
               </NewsTileInfo>
             </InfoWrapper>
           </TileWrapper>

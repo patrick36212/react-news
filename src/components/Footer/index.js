@@ -1,10 +1,10 @@
-import { FooterInfo, FooterWrapper } from "./syled";
-import { useSelector } from "react-redux";
-import { selectArticles } from "../../features/newsSlice";
-import { useEffect, useState } from "react";
+import {FooterInfo, FooterWrapper} from "./syled";
+import {useEffect, useState} from "react";
+import {useSelector} from "react-redux";
+import {selectFullData} from "../../features/newsSlice";
 
 const Footer = () => {
-  const articles = useSelector(selectArticles);
+  const fullData = useSelector(selectFullData);
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -19,9 +19,10 @@ const Footer = () => {
 
   return (
     <FooterWrapper>
-      <FooterInfo>
-        Articles found: {articles.length === 0 ? 0 : articles.length}
-      </FooterInfo>
+      {!!fullData &&
+        <FooterInfo>
+          Articles found: {fullData.totalResults === 0 ? 0 : fullData.totalResults}
+        </FooterInfo>}
       <FooterInfo>{time.toLocaleTimeString()}</FooterInfo>
     </FooterWrapper>
   );
