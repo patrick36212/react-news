@@ -59,6 +59,11 @@ export const PopupContent = styled.p`
   margin: 0;
   font-size: 16px;
   line-height: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 export const PopupAddInfo = styled.span`
