@@ -8,6 +8,7 @@ import {
   selectCountryCode,
   selectSelectedArticle,
   setArticles,
+  setFullData,
 } from "../newsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useQuery } from "react-query";
@@ -15,9 +16,11 @@ import { getNewsData } from "../getNewsData";
 import { nanoid } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 import News from "../index";
+import {useLocation} from "react-router";
 
 const ChosenCountryNews = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
   const countryCode = useSelector(selectCountryCode);
   const articles = useSelector(selectArticles);
   const selectedArticle = useSelector(selectSelectedArticle);
@@ -33,10 +36,11 @@ const ChosenCountryNews = () => {
 
   useEffect(() => {
     if (!!data) {
-      const articleList = data.articles;
+      const articleList = data.results;
       articleList.forEach((article) => (article.id = nanoid()));
 
       dispatch(setArticles(articleList));
+      dispatch(setFullData(data));
     }
   }, [data, dispatch]);
 
@@ -44,7 +48,11 @@ const ChosenCountryNews = () => {
     <News>
       {!!isLoading && <Loading />}
       {!!isError && <Error />}
-      {!!data && <NewsList data={articles} />}
+      {!!data &&
+      <>
+        <h2>Latest news for {location.pathname.split("/")[3].replaceAll("%20", " ")}</h2>
+        <NewsList data={articles} />
+      </>}
       {!!selectedArticle && (
         <Popup
           news={selectedArticle}
