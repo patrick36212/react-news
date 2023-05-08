@@ -1,6 +1,6 @@
 import countries from "./countries.json";
 import { useDispatch } from "react-redux";
-import { setCountryCode } from "../../features/newsSlice";
+import { setCountry } from "../../features/newsSlice";
 import { nanoid } from "@reduxjs/toolkit";
 import {
   CountryFlag,
@@ -15,7 +15,7 @@ const CountryList = () => {
   const dispatch = useDispatch();
 
   const handleOnClick = (country) => {
-    dispatch(setCountryCode(country.code));
+    dispatch(setCountry(country));
   };
 
   return (
