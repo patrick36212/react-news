@@ -7,7 +7,8 @@ export const FooterWrapper = styled.footer`
   justify-items: end;
   align-content: center;
   gap: 10px;
-  padding: 20px 40px;
+  padding: 16px 40px;
+  width: 100%;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     height: max-content;

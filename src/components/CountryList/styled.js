@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {NavLink} from "react-router-dom";
 export const ListWrapper = styled.aside`
   position: absolute;
-  max-height: calc(100vh - 98px);
+  max-height: calc(100vh - 96px);
   width: 60px;
   padding: 10px 10px 30px 10px;
   background: ${({theme}) => theme.colors.sideBackground};
@@ -27,7 +27,7 @@ export const ListWrapper = styled.aside`
   }
 
   @media(max-width: ${({theme}) => theme.breakpoints.tablet}px) {
-    max-height: calc(100vh - 78px);
+    max-height: calc(100vh - 74px);
   }
 `;
 export const List = styled.ul`
