@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     color: ${({ theme }) => theme.colors.secondaryColor};
     max-height: 100vh;
+    overflow-y: hidden;
   }
 
   *, ::after, ::before {
