@@ -88,10 +88,17 @@ export const Image = styled.img`
     css`
       background-image: url(${Img});
       background-size: contain;
-      background-color: ${({ theme }) => theme.colors.additionalColor};;
+      background-color: ${({ theme }) => theme.colors.additionalColor};
     `}
 `;
 
+export const NewsSectionTitle = styled.h2`
+  text-align: center;
+  margin: 0;
+  padding: 16px;
+  width: 100%;
+  box-shadow: 0 3px 3px rgba(61, 60, 60, 0.35);
+`;
 export const NewsTileTitle = styled.h3`
   font-size: 20px;
   line-height: 28px;
