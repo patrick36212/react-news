@@ -10,9 +10,11 @@ const News = ({ children }) => {
       <Header />
       <Main>
         <CountryList />
-        <Section>{children}</Section>
+        <Section>
+          {children}
+          <Footer/>
+        </Section>
       </Main>
-      <Footer/>
     </>
   );
 };
