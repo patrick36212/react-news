@@ -5,7 +5,6 @@ import {
   NewsTileInfo,
   NewsTileList,
   NewsTileTitle,
-  TileButton,
   TileWrapper,
 } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,25 +22,26 @@ const NewsList = ({ data, country }) => {
       )}
       <NewsTileList list={isListActive}>
         {data.map((news) => (
-          <TileButton
+          <TileWrapper
+            list={isListActive}
             onClick={() => dispatch(setSelectedArticle(news.id))}
             key={news.id}
           >
-            <TileWrapper list={isListActive}>
-              <Image
-                image={news.image_url}
-                noImage={!news.image_url}
-                list={isListActive}
-              />
+            <Image
+              image={news.image_url}
+              noImage={!news.image_url}
+              list={isListActive}
+            />
+            <InfoWrapper>
               <NewsTileTitle title={news.title} list={isListActive}>
                 {news.title}
               </NewsTileTitle>
-              <InfoWrapper list={isListActive}>
+              <InfoWrapper inner="true">
                 <NewsTileInfo>Source: {news.source_id}</NewsTileInfo>
                 <NewsTileInfo>Published at: {news.pubDate}</NewsTileInfo>
               </InfoWrapper>
-            </TileWrapper>
-          </TileButton>
+            </InfoWrapper>
+          </TileWrapper>
         ))}
       </NewsTileList>
     </>
