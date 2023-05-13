@@ -1,13 +1,31 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
-export const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled.div`
   width: 100%;
+  position: sticky;
+  top: 0;
+  background: ${({ theme }) => theme.colors.mainBackground};
+
+  ${({ shadow }) =>
+    shadow &&
+    css`
+      box-shadow: 0 1px 6px ${({ theme }) => theme.colors.additionalColor};
+
+      header {
+        box-shadow: none;
+      }
+    `}
+`;
+
+export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.additionalColor};
+  padding: 16px;
+  max-width: ${({ theme }) => theme.breakpoints.laptop}px;
+  margin: auto;
+  box-shadow: 0 1px 0 ${({ theme }) => theme.colors.additionalColor};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding: 10px;
