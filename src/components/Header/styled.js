@@ -6,8 +6,8 @@ export const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: ${({ theme }) => theme.colors.mainBackground};
+  padding: 20px 0;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.additionalColor};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding: 10px;
@@ -16,7 +16,8 @@ export const HeaderWrapper = styled.header`
 
 export const HeaderTitle = styled.h1`
   color: ${({ theme }) => theme.colors.mainColor};
-  margin: 0 10px;
+  margin: 0;
+  text-transform: uppercase;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 24px;

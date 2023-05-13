@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <HeaderLink to={"/"}>
-        <HeaderTitle>React News</HeaderTitle>
+        <HeaderTitle>R-NEWS</HeaderTitle>
       </HeaderLink>
       <LayoutButton />
     </HeaderWrapper>
