@@ -11,8 +11,8 @@ export const theme = {
     secondaryColor: "#f5f5f5",
     additionalColor: "#959595",
     sideBackground: "#4f74cc",
-    mainBackground: "#d5d5d5",
-    secondaryBackground: "#000000",
+    mainBackground: "#eaeaea",
+    secondaryBackground: "#00000040",
     additionalBackground: "#efefef",
   },
 };
