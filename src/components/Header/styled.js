@@ -22,6 +22,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 16px;
   max-width: ${({ theme }) => theme.breakpoints.laptop}px;
   margin: auto;
