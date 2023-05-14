@@ -1,6 +1,7 @@
 import { Header, HeaderLink, HeaderTitle, HeaderWrapper } from "./styled";
 import LayoutButton from "./LayoutButton";
 import { useState } from "react";
+import Search from "./Search";
 
 const Heading = () => {
   const [shadow, setShadow] = useState(false);
@@ -16,6 +17,7 @@ const Heading = () => {
         <HeaderLink to={"/"}>
           <HeaderTitle>R-NEWS</HeaderTitle>
         </HeaderLink>
+        <Search />
         <LayoutButton />
       </Header>
     </HeaderWrapper>
