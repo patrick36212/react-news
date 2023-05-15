@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.div`
   ${({ shadow }) =>
     shadow &&
     css`
-      box-shadow: 0 1px 6px ${({ theme }) => theme.colors.additionalColor};
+      box-shadow: 0 1px 6px ${({ theme }) => theme.colors.sideBackground};
 
       header {
         box-shadow: none;

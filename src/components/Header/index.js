@@ -6,7 +6,7 @@ import Search from "./Search";
 const Heading = () => {
   const [shadow, setShadow] = useState(false);
   const setShadowOnScroll = () => {
-    window.scrollY >= 98 ? setShadow(true) : setShadow(false);
+    window.scrollY >= 10 ? setShadow(true) : setShadow(false);
   };
 
   window.addEventListener("scroll", setShadowOnScroll);

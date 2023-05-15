@@ -35,7 +35,7 @@ export const List = styled.ul`
   position: absolute;
   top: 44px;
   width: 100%;
-  background: ${({ theme }) => theme.colors.mainBackground};
+  background: ${({ theme }) => theme.colors.additionalBackground};
   box-shadow: 0 0 4px ${({ theme }) => theme.colors.secondaryBackground};
   list-style-type: none;
   padding: 0;
@@ -56,6 +56,10 @@ export const ListButton = styled(NavLink)`
   &:hover {
     background: ${({ theme }) => theme.colors.sideBackground};
     color: ${({ theme }) => theme.colors.secondaryColor};
+
+    &:last-of-type {
+      border-radius: 0 0 12px 12px;
+    }
   }
 `;
 
