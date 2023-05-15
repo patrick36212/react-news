@@ -18,7 +18,7 @@ const NewsList = ({ data, country }) => {
   return (
     <>
       {country && (
-        <NewsSectionTitle>Latest news for {country.name}</NewsSectionTitle>
+        <NewsSectionTitle>Last 10 news for {country.name}</NewsSectionTitle>
       )}
       <NewsTileList list={isListActive}>
         {data.map((news) => (
