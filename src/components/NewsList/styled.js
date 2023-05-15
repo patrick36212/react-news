@@ -2,21 +2,23 @@ import styled, { css } from "styled-components";
 import Img from "./img.svg";
 
 export const NewsSectionTitle = styled.h2`
-  text-align: center;
+  text-align: left;
   margin: 0;
   padding: 16px;
   width: 100%;
-  box-shadow: 0 3px 3px rgba(61, 60, 60, 0.35);
+  filter: drop-shadow(
+    1px 2px ${({ theme }) => theme.colors.secondaryBackground}
+  );
 `;
 export const NewsTileList = styled.ul`
   padding: 15px;
   list-style-type: none;
-  overflow-y: auto;
   width: 100%;
-  margin: auto;
+  margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
-  grid-gap: 6px;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  grid-gap: 10px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
@@ -26,8 +28,7 @@ export const NewsTileList = styled.ul`
   ${({ list }) =>
     list &&
     css`
-      grid-gap: 4px;
-      grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
 
       @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         grid-template-columns: 1fr;
@@ -38,14 +39,16 @@ export const NewsTileList = styled.ul`
 export const TileWrapper = styled.li`
   display: flex;
   flex-direction: column;
-  background: ${({ theme }) => theme.colors.mainColor};
+  background: ${({ theme }) => theme.colors.mainBackground};
+  box-shadow: 4px 4px 6px ${({ theme }) => theme.colors.sideBackground};
   height: 100%;
+  width: 100%;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   border-radius: 12px;
 
   &:hover {
-    box-shadow: 0 0 14px ${({ theme }) => theme.colors.additionalColor};
+    box-shadow: 2px 2px 14px ${({ theme }) => theme.colors.sideBackground};
 
     h3 {
       text-decoration: underline;
@@ -55,7 +58,10 @@ export const TileWrapper = styled.li`
   ${({ list }) =>
     list &&
     css`
+      max-width: 700px;
+      padding: 6px;
       flex-direction: row;
+      max-height: 150px;
     `}
 `;
 
@@ -70,7 +76,9 @@ export const Image = styled.img`
   ${({ list }) =>
     list &&
     css`
+      max-width: 150px;
       width: 100%;
+      border-radius: 10px;
     `}
 
   ${({ noImage }) =>
@@ -86,7 +94,6 @@ export const NewsTileTitle = styled.h3`
   font-size: 20px;
   line-height: 28px;
   font-weight: 600;
-  text-align: left;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -106,15 +113,19 @@ export const NewsTileTitle = styled.h3`
 `;
 
 export const InfoWrapper = styled.div`
+  width: 100%;
+  height: 100%;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-between;
 
   ${({ inner }) =>
     inner &&
     css`
+      align-items: flex-end;
+      height: max-content;
       padding: 0;
     `}
 `;
