@@ -7,12 +7,13 @@ const breakpoints = {
 export const theme = {
   breakpoints,
   colors: {
-    mainColor: "#2F2504",
-    secondaryColor: "#d3d3d3",
-    additionalColor: "#697177",
-    sideBackground: "#7E846B",
-    mainBackground: "#D0DDD7",
-    secondaryBackground: "#A5AE9E",
-    additionalBackground: "#C5C8BC",
+    mainColor: "#1E1E1E",
+    secondaryColor: "#DDDDDD",
+    additionalColor: "#645252",
+    mainBackground: "#526459",
+    secondaryBackground: "#D9D9D9",
+    tileBackground: "#96BA84",
+    footerBackground: "#184227",
+    additionalBackground: "#E3E1E1",
   },
 };
