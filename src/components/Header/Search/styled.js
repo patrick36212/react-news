@@ -18,8 +18,9 @@ export const Input = styled.input`
   padding: 8px 10px;
   border-radius: 16px;
   background: ${({ theme }) => theme.colors.additionalBackground};
+  color: ${({ theme }) => theme.colors.additionalColor};
   border: none;
-  box-shadow: 0 0 4px ${({ theme }) => theme.colors.secondaryBackground};
+  box-shadow: 1px 1px 4px ${({ theme }) => theme.colors.mainColor};
   outline: none;
   transition: border-radius .4s ease-in-out;
   
@@ -36,7 +37,7 @@ export const List = styled.ul`
   top: 44px;
   width: 100%;
   background: ${({ theme }) => theme.colors.additionalBackground};
-  box-shadow: 0 0 4px ${({ theme }) => theme.colors.secondaryBackground};
+  box-shadow: 1px 1px 4px ${({ theme }) => theme.colors.mainColor};
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -54,8 +55,7 @@ export const ListButton = styled(NavLink)`
   padding: 10px;
 
   &:hover {
-    background: ${({ theme }) => theme.colors.sideBackground};
-    color: ${({ theme }) => theme.colors.secondaryColor};
+    background: ${({ theme }) => theme.colors.tileBackground};
 
     &:last-of-type {
       border-radius: 0 0 12px 12px;

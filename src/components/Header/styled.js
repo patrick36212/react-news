@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.div`
   ${({ shadow }) =>
     shadow &&
     css`
-      box-shadow: 0 1px 6px ${({ theme }) => theme.colors.sideBackground};
+      box-shadow: 0 1px 6px ${({ theme }) => theme.colors.secondaryBackground};
 
       header {
         box-shadow: none;
@@ -26,7 +26,7 @@ export const Header = styled.header`
   padding: 16px;
   max-width: ${({ theme }) => theme.breakpoints.laptop}px;
   margin: auto;
-  box-shadow: 0 1px 0 ${({ theme }) => theme.colors.additionalColor};
+  box-shadow: 0 1px 0 ${({ theme }) => theme.colors.secondaryBackground};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding: 10px;
@@ -34,7 +34,7 @@ export const Header = styled.header`
 `;
 
 export const HeaderTitle = styled.h1`
-  color: ${({ theme }) => theme.colors.mainColor};
+  color: ${({ theme }) => theme.colors.secondaryColor};
   margin: 0;
   text-transform: uppercase;
 
