@@ -14,9 +14,9 @@ export const Loader = styled.span`
   height: 160px;
   border-width: 12px;
   border-style: solid;
-  border-color: ${({ theme }) => theme.colors.sideBackground}
-    ${({ theme }) => theme.colors.sideBackground}
-    ${({ theme }) => theme.colors.secondaryBackground};
+  border-color: ${({ theme }) => theme.colors.secondaryBackground}
+    ${({ theme }) => theme.colors.secondaryBackground}
+    ${({ theme }) => theme.colors.secondaryBackground} transparent;
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;

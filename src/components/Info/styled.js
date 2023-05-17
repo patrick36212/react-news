@@ -6,9 +6,9 @@ export const InfoWrapper = styled.div`
   align-items: center;
   margin: 64px 0;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobileL}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     margin: 32px 0;
-  };
+  }
 `;
 
 export const InfoTitle = styled.h3`
@@ -18,14 +18,14 @@ export const InfoTitle = styled.h3`
   font-weight: 700;
   text-align: center;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 22px;
-  };
+  }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobileL}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 18px;
     line-height: 22px;
-  };
+  }
 `;
 
 export const InfoParagraph = styled.p`
@@ -34,8 +34,8 @@ export const InfoParagraph = styled.p`
   line-height: 28px;
   text-align: center;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.mobileL}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 16px;
     line-height: 24px;
-  };
+  }
 `;

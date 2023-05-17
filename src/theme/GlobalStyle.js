@@ -8,11 +8,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: auto;
     background-color: ${({ theme }) => theme.colors.mainBackground};
-    box-shadow: 0 0 16px 8px ${({ theme }) => theme.colors.additionalColor};
-    
-    @media(min-width: 1025px) {
-      max-width: 90%;
-    }
   }
 
   *, ::after, ::before {
