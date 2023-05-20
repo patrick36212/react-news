@@ -8,6 +8,8 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: auto;
     background-color: ${({ theme }) => theme.colors.mainBackground};
+    overflow-y: scroll;
+    scroll-behavior: smooth;
   }
 
   *, ::after, ::before {
