@@ -5,6 +5,7 @@ export const InfoWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 64px 0;
+  color: ${({ theme }) => theme.colors.secondaryColor};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     margin: 32px 0;
