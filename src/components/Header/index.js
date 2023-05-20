@@ -1,5 +1,4 @@
 import { Header, HeaderLink, HeaderTitle, HeaderWrapper } from "./styled";
-import LayoutButton from "./LayoutButton";
 import { useState } from "react";
 import Search from "./Search";
 
@@ -18,7 +17,6 @@ const Heading = () => {
           <HeaderTitle>R-NEWS</HeaderTitle>
         </HeaderLink>
         <Search />
-        <LayoutButton />
       </Header>
     </HeaderWrapper>
   );
