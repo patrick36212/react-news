@@ -1,46 +1,11 @@
 import styled, { css } from "styled-components";
 import Img from "./img.svg";
 
-export const NewsSectionTitle = styled.h2`
-  text-align: left;
-  margin: 0;
-  padding: 16px;
-  width: 100%;
-  filter: drop-shadow(
-    1px 2px ${({ theme }) => theme.colors.secondaryBackground}
-  );
-`;
-export const NewsTileList = styled.ul`
-  padding: 15px;
-  list-style-type: none;
-  width: 100%;
-  margin: 0;
-  display: grid;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-  grid-gap: 10px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-    padding: 10px;
-  }
-
-  ${({ list }) =>
-    list &&
-    css`
-      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-
-      @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-        grid-template-columns: 1fr;
-      }
-    `}
-`;
-
-export const TileWrapper = styled.li`
+export const TileWrapper = styled.article`
   display: flex;
   flex-direction: column;
-  background: ${({ theme }) => theme.colors.mainBackground};
-  box-shadow: 4px 4px 6px ${({ theme }) => theme.colors.sideBackground};
+  background: ${({ theme }) => theme.colors.tileBackground};
+  box-shadow: 2px 2px 10px ${({ theme }) => theme.colors.mainColor};
   height: 100%;
   width: 100%;
   cursor: pointer;
@@ -48,7 +13,7 @@ export const TileWrapper = styled.li`
   border-radius: 12px;
 
   &:hover {
-    box-shadow: 2px 2px 14px ${({ theme }) => theme.colors.sideBackground};
+    box-shadow: 0 0 10px ${({ theme }) => theme.colors.tileBackground};
 
     h3 {
       text-decoration: underline;
@@ -58,7 +23,7 @@ export const TileWrapper = styled.li`
   ${({ list }) =>
     list &&
     css`
-      max-width: 700px;
+      max-width: max-content;
       padding: 6px;
       flex-direction: row;
       max-height: 150px;
@@ -86,7 +51,7 @@ export const Image = styled.img`
     css`
       background-image: url(${Img});
       background-size: 30%;
-      background-color: ${({ theme }) => theme.colors.additionalColor};
+      background-color: ${({ theme }) => theme.colors.secondaryBackground};
     `}
 `;
 
