@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export const HeaderWrapper = styled.div`
   width: 100%;
   position: sticky;
+  z-index: 1;
   top: 0;
   background: ${({ theme }) => theme.colors.mainBackground};
 
