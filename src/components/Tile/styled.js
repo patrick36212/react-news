@@ -3,48 +3,62 @@ import Img from "./img.svg";
 
 export const TileWrapper = styled.article`
   display: flex;
-  flex-direction: column;
-  background: ${({ theme }) => theme.colors.tileBackground};
-  box-shadow: 2px 2px 10px ${({ theme }) => theme.colors.mainColor};
-  height: 100%;
-  width: 100%;
+  flex-direction: row;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
-  border-radius: 12px;
+  box-shadow: 0 0 6px ${({ theme }) => theme.colors.secondaryBackground};
+  transition: all 0.4s ease-in-out;
+  width: 100%;
+
+  &:first-of-type,
+  &:last-of-type {
+    flex-direction: column;
+    position: relative;
+    padding: 0;
+
+    background: linear-gradient(
+      to bottom,
+      hsla(0, 0%, 35.29%, 0) 0%,
+      hsla(0, 0%, 34.53%, 0.034375) 16.36%,
+      hsla(0, 0%, 32.42%, 0.125) 33.34%,
+      hsla(0, 0%, 29.18%, 0.253125) 50.1%,
+      hsla(0, 0%, 24.96%, 0.4) 65.75%,
+      hsla(0, 0%, 19.85%, 0.546875) 79.43%,
+      hsla(0, 0%, 13.95%, 0.675) 90.28%,
+      hsla(0, 0%, 7.32%, 0.765625) 97.43%,
+      hsla(0, 0%, 0%, 0.8) 100%
+    );
+
+    img {
+      z-index: -1;
+      position: absolute;
+      max-width: 100%;
+      height: 100%;
+    }
+
+    h3,
+    p {
+      padding: 0 6px;
+      color: ${({ theme }) => theme.colors.secondaryColor};
+    }
+  }
 
   &:hover {
-    box-shadow: 0 0 10px ${({ theme }) => theme.colors.tileBackground};
+    box-shadow: 0 0 12px ${({ theme }) => theme.colors.additionalColor};
 
     h3 {
       text-decoration: underline;
     }
   }
-
-  ${({ list }) =>
-    list &&
-    css`
-      max-width: max-content;
-      padding: 6px;
-      flex-direction: row;
-      max-height: 150px;
-    `}
 `;
 
 export const Image = styled.img`
-  border-radius: 12px 12px 0 0;
   background-image: ${({ image }) => `url(${image})`};
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   aspect-ratio: 3/2;
-
-  ${({ list }) =>
-    list &&
-    css`
-      max-width: 150px;
-      width: 100%;
-      border-radius: 10px;
-    `}
+  max-width: 120px;
+  width: 100%;
 
   ${({ noImage }) =>
     noImage &&
@@ -56,9 +70,8 @@ export const Image = styled.img`
 `;
 
 export const NewsTileTitle = styled.h3`
-  font-size: 20px;
-  line-height: 28px;
   font-weight: 600;
+  margin: 10px 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -69,22 +82,21 @@ export const NewsTileTitle = styled.h3`
     font-size: 14px;
   }
 
-  ${({ list }) =>
-    list &&
-    css`
-      margin: 10px 0;
-      -webkit-line-clamp: 3;
-    `}
+  ${({ list }) => list && css``}
 `;
 
 export const InfoWrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding: 10px;
+  padding: 6px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+
+  &:first-of-type {
+    justify-content: flex-end;
+  }
 
   ${({ inner }) =>
     inner &&
@@ -92,11 +104,11 @@ export const InfoWrapper = styled.div`
       align-items: flex-end;
       height: max-content;
       padding: 0;
+      background: transparent;
     `}
 `;
 
 export const NewsTileInfo = styled.p`
   margin: 4px 0;
-  color: ${({ theme }) => theme.colors.additionalColor};
   font-size: 12px;
 `;
