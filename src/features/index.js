@@ -1,21 +1,15 @@
-import Header from "../components/Header";
-import CountryList from "../components/CountryList";
+import Wrapper from "../components/Wrapper";
+import Heading from "../components/Header";
 import Main from "../components/Main";
-import Section from "../components/Section";
 import Footer from "../components/Footer";
 
 const News = ({ children }) => {
   return (
-    <>
-      <Header />
-      <Main>
-        <CountryList />
-        <Section>
-          {children}
-          <Footer/>
-        </Section>
-      </Main>
-    </>
+    <Wrapper>
+      <Heading />
+      <Main>{children}</Main>
+      <Footer />
+    </Wrapper>
   );
 };
 
