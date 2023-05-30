@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const HeaderWrapper = styled.div`
   width: 100%;
   position: sticky;
-  z-index: 1;
+  z-index: 99;
   top: 0;
   background: ${({ theme }) => theme.colors.mainBackground};
 
@@ -14,7 +14,7 @@ export const HeaderWrapper = styled.div`
       box-shadow: 0 1px 6px ${({ theme }) => theme.colors.secondaryBackground};
 
       header {
-        box-shadow: none;
+        border-bottom: none;
       }
     `}
 `;
@@ -27,7 +27,7 @@ export const Header = styled.header`
   padding: 16px;
   max-width: ${({ theme }) => theme.breakpoints.laptop}px;
   margin: auto;
-  box-shadow: 0 1px 0 ${({ theme }) => theme.colors.secondaryBackground};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.secondaryBackground};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding: 10px;
