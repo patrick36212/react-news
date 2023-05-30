@@ -1,9 +1,10 @@
 import News from "../index";
+import Section from "../../components/Section";
 
 const GeoCountryNews = () => {
   return (
     <News>
-      <p>For articles choose Country</p>
+      <Section title="For articles choose Country" />
     </News>
   );
 };
