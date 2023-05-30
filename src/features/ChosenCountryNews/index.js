@@ -1,13 +1,9 @@
 import Loading from "../../components/Info/Loading";
 import Error from "../../components/Info/Error";
-import NewsList from "../../components/NewsList";
-import Popup from "../../components/Popup";
 import News from "../index";
 import {
-  closeSelectedArticle,
   selectArticles,
   selectCountry,
-  selectSelectedArticle,
   setArticles,
   setFullData,
 } from "../newsSlice";
@@ -16,12 +12,13 @@ import { useQuery } from "react-query";
 import { getNewsData } from "../getNewsData";
 import { nanoid } from "@reduxjs/toolkit";
 import { useEffect } from "react";
+import Section from "../../components/Section";
+import Tile from "../../components/Tile";
 
 const ChosenCountryNews = () => {
   const dispatch = useDispatch();
   const country = useSelector(selectCountry);
   const articles = useSelector(selectArticles);
-  const selectedArticle = useSelector(selectSelectedArticle);
 
   const { data, isError, isLoading } = useQuery(
     ["countryNews", country],
@@ -46,11 +43,12 @@ const ChosenCountryNews = () => {
     <News>
       {!!isLoading && <Loading />}
       {!!isError && <Error />}
-      {!!data && <NewsList country={country} data={articles} />}
-      {!!selectedArticle && (
-        <Popup
-          news={selectedArticle}
-          handleClose={() => dispatch(closeSelectedArticle())}
+      {!!data && (
+        <Section
+          title="Last 10"
+          sectionNews={articles.map((news) => (
+            <Tile data={news} />
+          ))}
         />
       )}
     </News>
