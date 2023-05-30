@@ -15,5 +15,7 @@ export const theme = {
     tileBackground: "#96BA84",
     footerBackground: "#184227",
     additionalBackground: "#E3E1E1",
+    tileShadowBackground:
+      "linear-gradient(to bottom, transparent 0%, #3131314d 65%, #3c3c3ce6 100%);",
   },
 };
