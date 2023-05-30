@@ -14,6 +14,8 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 import Section from "../../components/Section";
 import Tile from "../../components/Tile";
+import { Navigate } from "react-router-dom";
+import { geoCountryNews } from "../../core/routes";
 
 const ChosenCountryNews = () => {
   const dispatch = useDispatch();
@@ -38,6 +40,10 @@ const ChosenCountryNews = () => {
       dispatch(setFullData(data));
     }
   }, [data, dispatch]);
+
+  if (!country.code) {
+    return <Navigate to={geoCountryNews} />;
+  }
 
   return (
     <News>
