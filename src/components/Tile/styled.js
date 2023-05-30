@@ -12,26 +12,12 @@ export const TileWrapper = styled.article`
   &:first-of-type,
   &:last-of-type {
     flex-direction: column;
-    position: relative;
     padding: 0;
+    position: relative;
 
-    background: linear-gradient(
-      to bottom,
-      hsla(0, 0%, 35.29%, 0) 0%,
-      hsla(0, 0%, 34.53%, 0.034375) 16.36%,
-      hsla(0, 0%, 32.42%, 0.125) 33.34%,
-      hsla(0, 0%, 29.18%, 0.253125) 50.1%,
-      hsla(0, 0%, 24.96%, 0.4) 65.75%,
-      hsla(0, 0%, 19.85%, 0.546875) 79.43%,
-      hsla(0, 0%, 13.95%, 0.675) 90.28%,
-      hsla(0, 0%, 7.32%, 0.765625) 97.43%,
-      hsla(0, 0%, 0%, 0.8) 100%
-    );
-
-    img {
-      z-index: -1;
+    div:first-child {
       position: absolute;
-      max-width: 100%;
+      width: 100%;
       height: 100%;
     }
 
@@ -43,7 +29,7 @@ export const TileWrapper = styled.article`
   }
 
   &:hover {
-    box-shadow: 0 0 12px ${({ theme }) => theme.colors.additionalColor};
+    box-shadow: 0 0 6px 2px ${({ theme }) => theme.colors.secondaryColor};
 
     h3 {
       text-decoration: underline;
@@ -51,21 +37,26 @@ export const TileWrapper = styled.article`
   }
 `;
 
+export const ShadowWrapper = styled.div`
+  background: ${({ theme }) => theme.colors.tileShadowBackground};
+`;
 export const Image = styled.img`
+  position: relative;
+  z-index: -1;
   background-image: ${({ image }) => `url(${image})`};
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: ${({ theme }) => theme.colors.secondaryBackground};
   aspect-ratio: 3/2;
-  max-width: 120px;
   width: 100%;
+  height: 100%;
 
   ${({ noImage }) =>
     noImage &&
     css`
       background-image: url(${Img});
       background-size: 30%;
-      background-color: ${({ theme }) => theme.colors.secondaryBackground};
     `}
 `;
 
@@ -92,11 +83,8 @@ export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
-
-  &:first-of-type {
-    justify-content: flex-end;
-  }
+  justify-content: flex-end;
+  z-index: 1;
 
   ${({ inner }) =>
     inner &&
