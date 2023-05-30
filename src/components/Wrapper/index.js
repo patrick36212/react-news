@@ -22,6 +22,22 @@ const Wrapper = styled.div`
         grid-column: 2;
         grid-row: 5/8;
       }
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+        grid-auto-rows: 100px;
+      }
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        grid-template-columns: 1fr;
+
+        article:first-of-type {
+          grid-row: auto;
+        }
+        article:last-of-type {
+          grid-column: 1;
+          grid-row: auto;
+        }
+      }
     `}
 `;
 

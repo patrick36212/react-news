@@ -11,20 +11,22 @@ export const TileWrapper = styled.article`
 
   &:first-of-type,
   &:last-of-type {
-    flex-direction: column;
-    padding: 0;
-    position: relative;
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+      flex-direction: column;
+      padding: 0;
+      position: relative;
 
-    div:first-child {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
+      div:first-child {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
 
-    h3,
-    p {
-      padding: 0 6px;
-      color: ${({ theme }) => theme.colors.secondaryColor};
+      h3,
+      p {
+        padding: 0 6px;
+        color: ${({ theme }) => theme.colors.secondaryColor};
+      }
     }
   }
 
@@ -69,6 +71,10 @@ export const NewsTileTitle = styled.h3`
   text-overflow: ellipsis;
   overflow: hidden;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    -webkit-line-clamp: 1;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 14px;
   }
@@ -99,4 +105,8 @@ export const InfoWrapper = styled.div`
 export const NewsTileInfo = styled.p`
   margin: 4px 0;
   font-size: 12px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    font-size: 10px;
+  }
 `;
