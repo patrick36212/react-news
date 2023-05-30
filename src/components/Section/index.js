@@ -1,5 +1,4 @@
 import { SectionWrapper } from "./styled";
-import Tile from "../Tile";
 import Wrapper from "../Wrapper";
 
 const Section = ({ title, sectionNews }) => {
