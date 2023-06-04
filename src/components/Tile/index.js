@@ -9,7 +9,7 @@ import {
 
 const News = ({ data, onClickFn }) => {
   return (
-    <TileWrapper onClick={() => onClickFn} key={data.id}>
+    <TileWrapper onClick={() => onClickFn}>
       <ShadowWrapper>
         <Image image={data.image_url} noImage={!data.image_url} />
       </ShadowWrapper>

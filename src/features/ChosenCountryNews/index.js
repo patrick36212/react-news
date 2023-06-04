@@ -53,7 +53,7 @@ const ChosenCountryNews = () => {
         <Section
           title="Last 10"
           sectionNews={articles.map((news) => (
-            <Tile data={news} />
+            <Tile data={news} key={news.id} />
           ))}
         />
       )}
