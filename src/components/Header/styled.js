@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.header`
   width: 100%;
   position: sticky;
   z-index: 99;
@@ -19,7 +19,7 @@ export const HeaderWrapper = styled.div`
     `}
 `;
 
-export const Header = styled.header`
+export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
