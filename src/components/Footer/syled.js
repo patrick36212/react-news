@@ -1,21 +1,32 @@
 import styled from "styled-components";
 
 export const FooterWrapper = styled.footer`
-  background: ${({ theme }) => theme.colors.mainColor};
+  margin: 20px 0 0 0;
+  width: 100%;
+  background: ${({ theme }) => theme.colors.footerBackground};
+  color: ${({ theme }) => theme.colors.secondaryBackground};
+`;
+export const StyledFooter = styled.div`
+  max-width: ${({ theme }) => theme.breakpoints.laptop}px;
+  margin: auto;
   display: grid;
-  grid-auto-rows: max-content;
-  justify-items: end;
-  align-content: center;
-  gap: 10px;
-  padding: 16px 40px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 6px;
+  padding: 16px;
+  max-width: ${({ theme }) => theme.breakpoints.laptop}px;
   width: 100%;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    max-width: 100%;
     height: max-content;
     gap: 4px;
     padding: 10px 20px;
   }
 `;
+
+export const FooterInfoWrapper = styled.div``;
+
+export const FooterInfoHeader = styled.h3``;
 
 export const FooterInfo = styled.p`
   font-size: 14px;

@@ -1,10 +1,13 @@
-import {FooterInfo, FooterWrapper} from "./syled";
-import {useEffect, useState} from "react";
-import {useSelector} from "react-redux";
-import {selectFullData} from "../../features/newsSlice";
+import {
+  FooterInfo,
+  FooterInfoHeader,
+  FooterInfoWrapper,
+  FooterWrapper,
+  StyledFooter,
+} from "./syled";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
-  const fullData = useSelector(selectFullData);
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -19,11 +22,19 @@ const Footer = () => {
 
   return (
     <FooterWrapper>
-      {!!fullData &&
-        <FooterInfo>
-          Articles found: {fullData.totalResults === 0 ? 0 : fullData.totalResults}
-        </FooterInfo>}
-      <FooterInfo>{time.toLocaleTimeString()}</FooterInfo>
+      <StyledFooter>
+        <FooterInfoWrapper>
+          <FooterInfoHeader>Contact</FooterInfoHeader>
+          <FooterInfo>patrick36212@gmail.com</FooterInfo>
+        </FooterInfoWrapper>
+        <FooterInfoWrapper>
+          <FooterInfoHeader>About</FooterInfoHeader>
+          <FooterInfo>Lorem ipsum </FooterInfo>
+        </FooterInfoWrapper>
+        <FooterInfoWrapper>
+          <FooterInfoHeader>{time.toLocaleTimeString()}</FooterInfoHeader>
+        </FooterInfoWrapper>
+      </StyledFooter>
     </FooterWrapper>
   );
 };
