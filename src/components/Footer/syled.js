@@ -30,6 +30,18 @@ export const FooterInfoWrapper = styled.div`
   justify-content: start;
   grid-gap: 10px;
   padding: 16px 0;
+
+  &:last-of-type {
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+      grid-row: 1;
+      grid-column: 2;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+      grid-row: 1;
+      grid-column: 1;
+    }
+  }
 `;
 
 export const FooterInfoHeader = styled.h3`
