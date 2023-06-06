@@ -9,7 +9,7 @@ export const theme = {
   colors: {
     mainColor: "#1E1E1E",
     secondaryColor: "#DDDDDD",
-    additionalColor: "#645252",
+    additionalColor: "#53ad38",
     mainBackground: "#526459",
     secondaryBackground: "#D9D9D9",
     tileBackground: "#96BA84",
