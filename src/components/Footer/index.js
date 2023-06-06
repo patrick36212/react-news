@@ -2,10 +2,12 @@ import {
   FooterInfo,
   FooterInfoHeader,
   FooterInfoWrapper,
+  FooterLink,
   FooterWrapper,
   StyledFooter,
 } from "./syled";
 import { useEffect, useState } from "react";
+import { GitHubIcon, LinkedInIcon, MailIcon } from "./Icons";
 
 const Footer = () => {
   const [time, setTime] = useState(new Date());
@@ -25,12 +27,31 @@ const Footer = () => {
       <StyledFooter>
         <FooterInfoWrapper>
           <FooterInfoHeader>Contact</FooterInfoHeader>
-          <FooterInfo>patrick36212@gmail.com</FooterInfo>
+
+          <FooterLink href="mailto:patrick36212@gmial.com">
+            <MailIcon />
+            <FooterInfo>patrick36212@gmail.com</FooterInfo>
+          </FooterLink>
+
+          <FooterLink href="https://github.com/patrick36212" target="_blank">
+            <GitHubIcon />
+            <FooterInfo>GitHub</FooterInfo>
+          </FooterLink>
+
+          <FooterLink
+            href="https://www.linkedin.com/in/patryk-krawczyk-js/"
+            target="_blank"
+          >
+            <LinkedInIcon />
+            <FooterInfo>LinkedIn</FooterInfo>
+          </FooterLink>
         </FooterInfoWrapper>
+
         <FooterInfoWrapper>
           <FooterInfoHeader>About</FooterInfoHeader>
           <FooterInfo>Lorem ipsum </FooterInfo>
         </FooterInfoWrapper>
+
         <FooterInfoWrapper>
           <FooterInfoHeader>{time.toLocaleTimeString()}</FooterInfoHeader>
         </FooterInfoWrapper>
