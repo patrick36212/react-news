@@ -4,7 +4,8 @@ export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 64px 0;
+  justify-content: center;
+  min-height: 85vh;
   color: ${({ theme }) => theme.colors.secondaryColor};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {

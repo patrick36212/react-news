@@ -13,7 +13,7 @@ export const HeaderWrapper = styled.header`
     css`
       box-shadow: 0 1px 6px ${({ theme }) => theme.colors.secondaryBackground};
 
-      header {
+      div {
         border-bottom: none;
       }
     `}
