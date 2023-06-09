@@ -18,7 +18,7 @@ export const Input = styled.input`
   padding: 8px 10px;
   border-radius: 16px;
   background: ${({ theme }) => theme.colors.additionalBackground};
-  color: ${({ theme }) => theme.colors.additionalColor};
+  color: ${({ theme }) => theme.colors.mainColor};
   border: none;
   box-shadow: 1px 1px 4px ${({ theme }) => theme.colors.mainColor};
   outline: none;

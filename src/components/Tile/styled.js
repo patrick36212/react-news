@@ -5,7 +5,7 @@ export const TileWrapper = styled.article`
   display: flex;
   flex-direction: row;
   cursor: pointer;
-  box-shadow: 0 0 6px ${({ theme }) => theme.colors.secondaryBackground};
+  border: 1px solid ${({ theme }) => theme.colors.tileBackground};
   transition: all 0.4s ease-in-out;
   width: 100%;
 
@@ -31,7 +31,7 @@ export const TileWrapper = styled.article`
   }
 
   &:hover {
-    box-shadow: 0 0 6px 2px ${({ theme }) => theme.colors.secondaryColor};
+    box-shadow: 0 0 6px ${({ theme }) => theme.colors.secondaryColor};
 
     h3 {
       text-decoration: underline;
