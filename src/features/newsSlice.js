@@ -3,17 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 const newsSlice = createSlice({
   name: "news",
   initialState: {
-    country: {},
-    fullData: null,
+    countryCode: null,
     articles: [],
     selectedArticle: null,
   },
   reducers: {
-    setCountry: (state, { payload: country }) => {
-      state.country = country;
-    },
-    setFullData: (state, { payload: data }) => {
-      state.fullData = data;
+    setCountryCode: (state, { payload: code }) => {
+      state.countryCode = code;
     },
     setArticles: (state, { payload: articles }) => {
       state.articles = articles;
@@ -31,16 +27,14 @@ const newsSlice = createSlice({
 });
 
 export const {
-  setCountry,
+  setCountryCode,
   setArticles,
   setSelectedArticle,
   closeSelectedArticle,
-  setFullData,
 } = newsSlice.actions;
 
-export const selectCountry = (state) => state.news.country;
+export const selectCountryCode = (state) => state.news.countryCode;
 export const selectArticles = (state) => state.news.articles;
 export const selectSelectedArticle = (state) => state.news.selectedArticle;
-export const selectFullData = (state) => state.news.fullData;
 
 export default newsSlice.reducer;
