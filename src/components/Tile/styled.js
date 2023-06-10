@@ -11,7 +11,7 @@ export const TileWrapper = styled.article`
 
   &:first-of-type,
   &:last-of-type {
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.mobile}px) {
       flex-direction: column;
       padding: 0;
       position: relative;
@@ -64,7 +64,7 @@ export const Image = styled.img`
 
 export const NewsTileTitle = styled.h3`
   font-weight: 600;
-  margin: 10px 0;
+  margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -95,6 +95,7 @@ export const InfoWrapper = styled.div`
   ${({ inner }) =>
     inner &&
     css`
+      margin: 10px 0 0 0;
       align-items: flex-end;
       height: max-content;
       padding: 0;

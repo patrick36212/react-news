@@ -25,6 +25,14 @@ const Wrapper = styled.div`
 
       @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         grid-auto-rows: 100px;
+
+        article:first-of-type {
+          grid-row: 1/3;
+        }
+        article:last-of-type {
+          grid-column: 2;
+          grid-row: 5/7;
+        }
       }
 
       @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
