@@ -8,4 +8,6 @@ export const SectionWrapper = styled.section`
   width: 100%;
   min-height: 85dvh;
   padding: 10px;
+  justify-content: center;
+  align-items: center;
 `;
