@@ -8,7 +8,7 @@ import GeoCountryNews from "../features/GeoCountryNews";
 import ChosenCountryNews from "../features/ChosenCountryNews";
 
 export const geoCountryNews = "/news";
-export const countryPath = "/news/country/:name";
+export const countryPath = "/news/:countryCode";
 
 export const routes = createHashRouter(
   createRoutesFromElements(
