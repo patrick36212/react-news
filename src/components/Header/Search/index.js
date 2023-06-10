@@ -43,7 +43,7 @@ const Search = () => {
         {query &&
           countriesList.slice(0, 10).map((country) => (
             <ListButton
-              to={`/news/country/${country.name}`}
+              to={`/news/${country.code}`}
               key={nanoid()}
               onClick={() => handleOnClick(country)}
             >
