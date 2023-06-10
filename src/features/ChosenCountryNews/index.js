@@ -9,6 +9,8 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 import Section from "../../components/Section";
 import Tile from "../../components/Tile";
+import { Navigate } from "react-router-dom";
+import { geoCountryNews } from "../../core/routes";
 
 const ChosenCountryNews = () => {
   const dispatch = useDispatch();
@@ -33,13 +35,17 @@ const ChosenCountryNews = () => {
     }
   }, [data, dispatch]);
 
+  if (!countryCode) {
+    return <Navigate to={geoCountryNews} />;
+  }
+
   return (
     <News>
       {!!isLoading && <Loading />}
       {!!isError && <Error />}
       {!!data && (
         <Section
-          title="Last 10"
+          title="Latest 10 news for chosen country"
           sectionNews={articles.map((news) => (
             <Tile data={news} key={news.id} />
           ))}
