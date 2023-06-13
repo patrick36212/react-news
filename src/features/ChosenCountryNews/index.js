@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import Section from "../../components/Section";
 import Tile from "../../components/Tile";
 import { Navigate } from "react-router-dom";
-import { geoCountryNews } from "../../core/routes";
+import { mainPage } from "../../core/routes";
 
 const ChosenCountryNews = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const ChosenCountryNews = () => {
   }, [data, dispatch]);
 
   if (!countryCode) {
-    return <Navigate to={geoCountryNews} />;
+    return <Navigate to={mainPage} />;
   }
 
   return (
@@ -41,9 +41,12 @@ const ChosenCountryNews = () => {
       {!!isError && <Error />}
       {!!data && (
         <Section
-          title="Latest 10 news for chosen country"
           sectionNews={articles.map((news) => (
-            <Tile data={news} key={articles.indexOf(news)} />
+            <Tile
+              data={news}
+              key={articles.indexOf(news)}
+              path={`/news/${countryCode}/${articles.indexOf(news)}`}
+            />
           ))}
         />
       )}
