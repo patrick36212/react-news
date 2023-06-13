@@ -14,11 +14,11 @@ const Wrapper = styled.div`
       grid-template-columns: repeat(2, 1fr);
       grid-auto-rows: 120px;
 
-      article:first-of-type {
+      a:first-of-type {
         grid-column: 1;
         grid-row: 1/4;
       }
-      article:last-of-type {
+      a:last-of-type {
         grid-column: 2;
         grid-row: 5/8;
       }
@@ -26,10 +26,10 @@ const Wrapper = styled.div`
       @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         grid-auto-rows: 100px;
 
-        article:first-of-type {
+        a:first-of-type {
           grid-row: 1/3;
         }
-        article:last-of-type {
+        a:last-of-type {
           grid-column: 2;
           grid-row: 5/7;
         }
@@ -38,10 +38,10 @@ const Wrapper = styled.div`
       @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         grid-template-columns: 1fr;
 
-        article:first-of-type {
+        a:first-of-type {
           grid-row: auto;
         }
-        article:last-of-type {
+        a:last-of-type {
           grid-column: 1;
           grid-row: auto;
         }
