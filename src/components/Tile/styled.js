@@ -1,13 +1,15 @@
 import styled, { css } from "styled-components";
 import Img from "./img.svg";
-
-export const TileWrapper = styled.article`
+import { NavLink } from "react-router-dom";
+export const TileWrapper = styled(NavLink)`
   display: flex;
   flex-direction: row;
   cursor: pointer;
   border: 1px solid ${({ theme }) => theme.colors.tileBackground};
   transition: all 0.4s ease-in-out;
   width: 100%;
+  color: ${({ theme }) => theme.colors.mainColor};
+  text-decoration: none;
 
   &:first-of-type,
   &:last-of-type {
