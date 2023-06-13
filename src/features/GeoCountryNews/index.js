@@ -35,7 +35,7 @@ const GeoCountryNews = () => {
   } else {
     return (
       <News>
-        <Section title="Search country for news" />
+        <Section />
       </News>
     );
   }
