@@ -14,13 +14,10 @@ const newsSlice = createSlice({
     setArticles: (state, { payload: articles }) => {
       state.articles = articles;
     },
-    setSelectedArticle: (state, { payload: articleId }) => {
-      const articleIndex = state.articles.findIndex(
-        ({ id }) => id === articleId
-      );
+    setSelectedArticle: (state, { payload: articleIndex }) => {
       state.selectedArticle = state.articles[articleIndex];
     },
-    closeSelectedArticle: (state) => {
+    clearSelectedArticle: (state) => {
       state.selectedArticle = null;
     },
   },
@@ -30,7 +27,7 @@ export const {
   setCountryCode,
   setArticles,
   setSelectedArticle,
-  closeSelectedArticle,
+  clearSelectedArticle,
 } = newsSlice.actions;
 
 export const selectCountryCode = (state) => state.news.countryCode;
