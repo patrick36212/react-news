@@ -1,7 +1,14 @@
 import Loading from "../../components/Info/Loading";
 import Error from "../../components/Info/Error";
 import News from "../index";
-import { selectArticles, selectCountryCode, setArticles } from "../newsSlice";
+import {
+  selectArticles,
+  selectCountryCode,
+  selectSelectedArticle,
+  clearSelectedArticle,
+  setArticles,
+  setSelectedArticle,
+} from "../newsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useQuery } from "react-query";
 import { getNewsData } from "../getNewsData";
@@ -15,6 +22,7 @@ const ChosenCountryNews = () => {
   const dispatch = useDispatch();
   const countryCode = useSelector(selectCountryCode);
   const articles = useSelector(selectArticles);
+  const selectedArticle = useSelector(selectSelectedArticle);
 
   const { data, isError, isLoading } = useQuery(
     ["countryNews", countryCode],
@@ -31,6 +39,12 @@ const ChosenCountryNews = () => {
     }
   }, [data, dispatch]);
 
+  useEffect(() => {
+    if (!!selectedArticle) {
+      dispatch(clearSelectedArticle());
+    }
+  }, [selectedArticle, dispatch]);
+
   if (!countryCode) {
     return <Navigate to={mainPage} />;
   }
@@ -41,11 +55,12 @@ const ChosenCountryNews = () => {
       {!!isError && <Error />}
       {!!data && (
         <Section
-          sectionNews={articles.map((news) => (
+          sectionNews={articles.map((news, index) => (
             <Tile
               data={news}
-              key={articles.indexOf(news)}
-              path={`/news/${countryCode}/${articles.indexOf(news)}`}
+              key={index}
+              path={`/news/${countryCode}/${index}`}
+              onClickFn={() => dispatch(setSelectedArticle(index))}
             />
           ))}
         />
