@@ -7,9 +7,9 @@ import {
   TileWrapper,
 } from "./styled";
 
-const News = ({ data, onClickFn }) => {
+const News = ({ data, path, onClickFn }) => {
   return (
-    <TileWrapper onClick={() => onClickFn}>
+    <TileWrapper to={path} onClick={onClickFn}>
       <ShadowWrapper>
         <Image image={data.image_url} noImage={!data.image_url} />
       </ShadowWrapper>
