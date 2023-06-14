@@ -1,6 +1,9 @@
-import Loading from "../../components/Info/Loading";
-import Error from "../../components/Info/Error";
-import News from "../index";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useQuery } from "react-query";
+import { getNewsData } from "../getNewsData";
+import { Navigate } from "react-router-dom";
+import { mainPage } from "../../core/routes";
 import {
   selectArticles,
   selectCountryCode,
@@ -9,14 +12,11 @@ import {
   setArticles,
   setSelectedArticle,
 } from "../newsSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { useQuery } from "react-query";
-import { getNewsData } from "../getNewsData";
-import { useEffect } from "react";
+import News from "../index";
 import Section from "../../components/Section";
-import Tile from "../../components/Tile";
-import { Navigate } from "react-router-dom";
-import { mainPage } from "../../core/routes";
+import NewsTile from "../../components/News";
+import Loading from "../../components/Info/Loading";
+import Error from "../../components/Info/Error";
 
 const ChosenCountryNews = () => {
   const dispatch = useDispatch();
@@ -56,7 +56,7 @@ const ChosenCountryNews = () => {
       {!!data && (
         <Section
           sectionNews={articles.map((news, index) => (
-            <Tile
+            <NewsTile
               data={news}
               key={index}
               path={`/news/${countryCode}/${index}`}

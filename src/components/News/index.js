@@ -7,7 +7,7 @@ import {
   TileWrapper,
 } from "./styled";
 
-const News = ({ data, path, onClickFn }) => {
+const NewsTile = ({ data, path, onClickFn }) => {
   return (
     <TileWrapper to={path} onClick={onClickFn}>
       <ShadowWrapper>
@@ -24,4 +24,4 @@ const News = ({ data, path, onClickFn }) => {
   );
 };
 
-export default News;
+export default NewsTile;
