@@ -4,6 +4,7 @@ const Wrapper = styled.div`
   display: grid;
   justify-items: center;
   align-content: center;
+  grid-row-gap: 20px;
 
   ${({ news }) =>
     news &&
