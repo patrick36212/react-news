@@ -5,12 +5,11 @@ import { useEffect } from "react";
 import { selectCountryCode, setCountryCode } from "../newsSlice";
 import { Navigate } from "react-router-dom";
 import News from "../index";
-import Section from "../../components/Section";
 const GeoCountryNews = () => {
   const dispatch = useDispatch();
   const countryCode = useSelector(selectCountryCode);
 
-  const { data } = useQuery(["geolocation"], () => {
+  const { data, isError } = useQuery(["geolocation"], () => {
     const checkGeoByIp = async () => {
       const resp = await fetch(`http://ip-api.com/json/`);
 
@@ -33,11 +32,7 @@ const GeoCountryNews = () => {
   if (!!countryCode) {
     return <Navigate to={`/news/${countryCode}`} />;
   } else {
-    return (
-      <News>
-        <Section />
-      </News>
-    );
+    return <News>{!!isError && <h2>Search country for news</h2>}</News>;
   }
 };
 
