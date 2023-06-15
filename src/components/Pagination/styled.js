@@ -19,6 +19,12 @@ export const PaginationButton = styled.button`
     cursor: pointer;
   }
 
+  &:disabled {
+    filter: brightness(80%);
+    cursor: not-allowed;
+    background: ${({ theme }) => theme.colors.additionalBackground};
+  }
+
   ${({ next }) =>
     next &&
     css`
