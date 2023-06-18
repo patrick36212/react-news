@@ -11,7 +11,7 @@ const Article = ({ article }) => {
 
   return (
     <ArticleWrapper>
-      {!!article.image_url && <ArticleImage image={article.image_url} />}
+      {!!article.image_url && <ArticleImage src={article.image_url} />}
       <h2>{article.title}</h2>
       <ArticleContent>{content}</ArticleContent>
       <ArticleAddInfo>
