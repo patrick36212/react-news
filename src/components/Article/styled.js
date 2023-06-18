@@ -26,9 +26,9 @@ export const ArticleWrapper = styled.article`
   }
 `;
 
-export const ArticleImage = styled.div`
-  width: 100%;
-  min-height: 400px;
+export const ArticleImage = styled.img`
+  max-width: 100%;
+  image-rendering: pixelated;
   background-image: ${({ image }) => `url(${image})`};
   background-repeat: no-repeat;
   background-size: cover;
