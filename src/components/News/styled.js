@@ -13,7 +13,7 @@ export const TileWrapper = styled(NavLink)`
 
   &:first-of-type,
   &:last-of-type {
-    @media (min-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    @media (min-width: 426px) {
       flex-direction: column;
       padding: 0;
       position: relative;
