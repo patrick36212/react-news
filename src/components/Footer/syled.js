@@ -51,6 +51,7 @@ export const FooterInfoHeader = styled.h3`
 export const FooterInfo = styled.p`
   font-size: 14px;
   font-weight: 600;
+  line-height: 20px;
   margin: 6px 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
