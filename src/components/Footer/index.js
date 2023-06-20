@@ -49,7 +49,12 @@ const Footer = () => {
 
         <FooterInfoWrapper>
           <FooterInfoHeader>About</FooterInfoHeader>
-          <FooterInfo>Lorem ipsum </FooterInfo>
+          <FooterInfo>
+            R-NEWS is an application made with latest technology. Data comes
+            from Newsdata.io, a News API that provides access to news articles
+            from all over the world. By default the App shows real-time news for
+            your country, but has 52 other - the choose is yours.
+          </FooterInfo>
         </FooterInfoWrapper>
 
         <FooterInfoWrapper>
