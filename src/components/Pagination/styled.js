@@ -13,6 +13,7 @@ export const PaginationButton = styled.button`
   background: ${({ theme }) => theme.colors.additionalBackground};
   color: ${({ theme }) => theme.colors.mainColor};
   transition: 0.3s ease-in;
+  font-weight: 600;
 
   &:hover {
     background: ${({ theme }) => theme.colors.tileBackground};
