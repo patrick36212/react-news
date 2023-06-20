@@ -11,7 +11,7 @@ const GeoCountryNews = () => {
 
   const { data, isError } = useQuery(["geolocation"], () => {
     const checkGeoByIp = async () => {
-      const resp = await fetch(`http://ip-api.com/json/`);
+      const resp = await fetch(`https://ip-api.com/json/`);
 
       if (!resp.ok) {
         throw new Error(resp.statusText);
